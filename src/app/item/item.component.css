@@ -1,0 +1,18 @@
+mat-card {
+    width: 200px;
+}
+div {
+    margin-top: 10px;
+    display: flex;
+    justify-content: right;
+}
+button {
+    margin-top: 7px;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+}
+mat-label{
+    margin-bottom: 15px;
+}

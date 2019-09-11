@@ -1,0 +1,12 @@
+<div fxLayoutGap="2%">
+  <p *ngIf="noItems()">There are no items in your cart.</p>
+  <div *ngFor="let item of items" (click)="onSelect(item)">
+    <a routerLink="/item/{{item.id}}/{{cart}}" >
+      <mat-card>
+        <mat-card-title>{{item.id}}</mat-card-title>
+        <mat-card-subtitle>${{item.price.toFixed(2)}}</mat-card-subtitle>
+        <img mat-card-image src="{{ item.imageUrl }}">
+    </mat-card>
+    </a>
+  </div>
+</div>

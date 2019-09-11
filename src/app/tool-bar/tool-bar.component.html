@@ -1,0 +1,31 @@
+<mat-toolbar>
+    <mat-toolbar-row>
+        <span>{{ title }}</span>
+        <span class="fill-space"></span>
+        <button mat-button> <mat-icon routerLink="/cart">shopping_cart</mat-icon></button> 
+    </mat-toolbar-row>
+
+    <mat-toolbar-row>
+      <nav>
+          <a routerLink="/home">Home</a>
+      </nav>
+      
+      <mat-menu #menu="matMenu">
+        <a *ngFor="let cat of categories" mat-menu-item routerLink="/item-list/{{cat.id}}">{{cat.id}}</a>
+      </mat-menu>
+      <button alignment="right" mat-button [matMenuTriggerFor]="menu">Menu</button>
+
+      <div class="search">
+        <input mat-input [(ngModel)]="searchText" id="search" placeholder="Search Items" onclick="this.value=''">
+        <ul class="search-result" *ngIf=searchText>
+          <li *ngFor="let i of allItems | filter : searchText" >
+            <a routerLink = "/item/{{i.id}}" (click)="searchText = ''">
+              {{i.id}}
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </mat-toolbar-row>
+
+  </mat-toolbar>

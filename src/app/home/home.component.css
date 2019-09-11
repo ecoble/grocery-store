@@ -1,0 +1,12 @@
+img {
+    width: 100%;
+    height: auto;
+}
+mat-toolbar {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(226, 231, 238);
+}
+h1 {
+    font-size: 2vw;
+}

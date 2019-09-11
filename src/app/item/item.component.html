@@ -1,0 +1,17 @@
+<div *ngIf="item" fxLayoutGap="2%">
+    <mat-card>
+        <img mat-card-image src="{{ item.imageUrl }}">
+    </mat-card>
+    <div class="info">
+        <mat-card-title>{{item.id}}</mat-card-title>
+        <p>Price: ${{item.price}}</p>
+        <mat-label>Amount: <input type="number" min="1" mat-input size="1px" [(ngModel)]="amount" (keyup)="onKey($event)" (click)="onKey($event)"></mat-label>
+        <mat-label>Total: ${{ (amount * item.price).toFixed(2) }} </mat-label>
+        <button mat-button (click)="addToCart()" [disabled]="invalidAmount()" *ngIf="!isInCart">Add to cart</button>
+        <button mat-button (click)="removeFromCart()" *ngIf="isInCart">Remove from cart</button>
+    </div>
+</div>
+
+<button mat-button (click)="goBack()">Back</button>
+
+  
